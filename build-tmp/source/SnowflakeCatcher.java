@@ -20,7 +20,7 @@ public void setup()
 {
   //your code here
   background(0);
-  size(600,600);
+  size(1200,600);
   snow = new SnowFlake[100];
   //block = new Block(mouseX,mouseY);
   for (int i = 0; i < snow.length; i++){
@@ -62,7 +62,7 @@ class SnowFlake
   SnowFlake()
   {
     //class member variable initializations
-    myX = (int)(Math.random()*600);
+    myX = (int)(Math.random()*1200);
     myY = (int)(Math.random()*600);
     isMoving = true;
   }
@@ -77,11 +77,10 @@ class SnowFlake
   {
     //your code here
     int pixel = get(myX,myY+6);
-    if (myY < 600 && myY >= 0 && myX >=0 && myX < 600){
-      if (pixel != color(0)){
+    if (myY < 600 && myY >= 0 && pixel != color(0)){
         isMoving = false;
-      }
-    } else {
+    }
+     else {
       isMoving = true;
     }
   }
@@ -103,7 +102,7 @@ class SnowFlake
     //your code here
     if (myY > 590){
       myY = 0;
-      myX = (int)(Math.random()*600);      
+      myX = (int)(Math.random()*1200);      
     }
   }
 }

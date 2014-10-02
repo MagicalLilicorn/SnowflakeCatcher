@@ -61,11 +61,10 @@ class SnowFlake
   {
     //your code here
     int pixel = get(myX,myY+6);
-    if (myY < 600 && myY >= 0 && myX >=0 && myX < 1200){
-      if (pixel != color(0)){
+    if (myY < 600 && myY >= 0 && pixel != color(0)){
         isMoving = false;
-      }
-    } else {
+    }
+     else {
       isMoving = true;
     }
   }
