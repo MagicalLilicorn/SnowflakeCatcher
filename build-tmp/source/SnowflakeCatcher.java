@@ -47,7 +47,7 @@ public void mouseDragged(){
   }
   else
   {
-    stroke(100,100,255);
+    stroke(255,208,0);
   }
   line(mouseX,mouseY,pmouseX,pmouseY);
   noStroke();
@@ -70,15 +70,21 @@ class SnowFlake
   {
     //your code here
     noStroke();
+    fill(255,0,0);
+    ellipse(myX,myY,10,10);
     fill(255);
-    ellipse(myX,myY,5,5);
+    arc(myX,myY,10,10,0,PI);
+    fill(0);
+    ellipse(myX,myY,6,6);
+    fill(255);
+    ellipse(myX,myY,4,4);
   }
   public void lookDown()
   {
     //your code here
-    int pixel = get(myX,myY+6);
+    int pixel = get(myX,myY+11);
     if (myY < 600 && myY >= 0 && pixel != color(0)){
-        isMoving = false;
+      isMoving = false;
     }
      else {
       isMoving = true;
@@ -88,7 +94,7 @@ class SnowFlake
   {
     //your code here
     fill(0);
-    ellipse(myX,myY,7,7);
+    ellipse(myX,myY,12,12);
   }
   public void move()
   {
@@ -100,7 +106,7 @@ class SnowFlake
   public void wrap()
   {
     //your code here
-    if (myY > 590){
+    if (myY > 585){
       myY = 0;
       myX = (int)(Math.random()*1200);      
     }
